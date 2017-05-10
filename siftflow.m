@@ -1,9 +1,9 @@
 function [vx, vy] = siftflow(im1_path, im2_path)
-im1 = imread(im1_path);
-im2 = imread(im2_path);
+im1 = padarray(imread(im1_path), 30);
+im2 = padarray(imread(im2_path), 30);
 
-im1 = imresize(imfilter(im1,fspecial('gaussian',7,1.),'same','replicate'),0.5,'bicubic');
-im2 = imresize(imfilter(im2,fspecial('gaussian',7,1.),'same','replicate'),0.5,'bicubic');
+im1 = imresize(imfilter(im1,fspecial('gaussian',7,1.),'same','replicate'),0.3,'bicubic');
+im2 = imresize(imfilter(im2,fspecial('gaussian',7,1.),'same','replicate'),0.3,'bicubic');
 
 im1 = im2double(im1);
 im2 = im2double(im2);
@@ -24,3 +24,6 @@ SIFTflowpara.nTopIterations = 60;
 SIFTflowpara.nIterations = 30;
 
 [vx,vy,energylist] = SIFTflowc2f(sift1,sift2,SIFTflowpara);
+
+vx = vx(10:end-9, 10:end-9, :);
+vy = vy(10:end-9, 10:end-9, :);
