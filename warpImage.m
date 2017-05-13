@@ -15,6 +15,7 @@ YY=min(max(YY,1),height2);
 for i=1:nchannels
     foo=interp2(xx,yy,im(:,:,i),XX,YY,'bicubic');
     foo(mask)=0.6;
+    size(foo)
     warpI2(:,:,i)=foo;
 end
 
