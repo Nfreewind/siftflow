@@ -1,6 +1,6 @@
 function [vx, vy] = siftflow(im1_path, im2_path)
-padsize = 100;
-scale = 0.25;
+padsize = 50;
+scale = 0.50;
 im1 = padarray(rgb2gray(imread(im1_path)), padsize);
 im2 = padarray(rgb2gray(imread(im2_path)), padsize);
 
