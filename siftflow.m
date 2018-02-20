@@ -21,7 +21,7 @@ SIFTflowpara.d = 40*255;
 SIFTflowpara.gamma = 0.005*255;
 SIFTflowpara.nlevels = 4;
 SIFTflowpara.wsize = 2;
-SIFTflowpara.topwsize = 10;
+SIFTflowpara.topwsize = 8;
 SIFTflowpara.nTopIterations = 60;
 SIFTflowpara.nIterations = 30;
 
